@@ -1,0 +1,14 @@
+{
+  "name": "github-real-names",
+  "version": "0.0.0",
+  "description": "plugin for Google Chrome that adds a button to toggle showing real names instead of usernames on GitHub",
+  "dependencies": {
+    "then-request": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForbesLindesay/github-real-names.git"
+  },
+  "author": "ForbesLindesay",
+  "license": "MIT"
+}

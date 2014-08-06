@@ -1,0 +1,4 @@
+contentscript.js
+*.pem
+*.zip
+node_modules
