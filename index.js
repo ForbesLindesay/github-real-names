@@ -13,7 +13,7 @@ function loadRealName(username, path) {
   if (realNames[username]) return;
   realNames[username] = username;
   request('GET', url.resolve(location.href, path)).getBody().done(function (res) {
-    var name = /\<span class\=\"vcard-fullname\" itemprop\=\"name\">([^<]+)\<\/span\>/.exec(res);
+    var name = /\<div class\=\"vcard-fullname\" itemprop\=\"name\">([^<]+)\<\/div\>/.exec(res);
     name = name && name[1];
     realNames[username] = name || username;
     update();
