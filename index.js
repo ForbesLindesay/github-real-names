@@ -2,6 +2,7 @@
 
 var url = require('url');
 var request = require('then-request');
+var he = require('he');
 
 var showingRealNames = true;
 var realNames = {
@@ -14,7 +15,7 @@ function loadRealName(username, path) {
   realNames[username] = username;
   request('GET', url.resolve(location.href, path)).getBody().done(function (res) {
     var name = /\<div class\=\"vcard-fullname\" itemprop\=\"name\">([^<]+)\<\/div\>/.exec(res);
-    name = name && name[1];
+    name = name && he.decode(name[1]);
     realNames[username] = name || username;
     update();
   });
@@ -62,6 +63,9 @@ function update() {
       return author.getAttribute('data-user-name');
     } else {
       var username = author.textContent;
+      if (username.indexOf('author=') !== -1) {
+        username = username.split('author=').pop();
+      }
       author.setAttribute('data-user-name', username);
       return username;
     }
