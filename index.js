@@ -49,6 +49,13 @@ function update() {
   }, function (author) {
     return author.getAttribute('href');
   });
+  updateList(document.querySelectorAll("[data-ga-click*='target:actor']"), function (author) {
+    return author.hasAttribute('href');
+  }, function (author) {
+    return /\/([^\/]+)$/.exec(author.getAttribute('href'))[1];
+  }, function (author) {
+    return author.getAttribute('href');
+  });
   updateList(document.getElementsByClassName('user-mention'), function (mention) {
     return mention.hasAttribute('href');
   }, function (mention) {
