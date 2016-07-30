@@ -1,6 +1,13 @@
 # GitHub Real Names
 
-This is a plugin for Google Chrome that adds a button to toggle showing real names instead of usernames on GitHub.  To build, run:
+Github Real Names is a Google chrome extension that adds a button to toggle showing real names instead of usernames on GitHub.
+
+Download it from the [chrome store](https://chrome.google.com/webstore/detail/github-real-names/edfnfekndkopmlejjmlplpceflfldoae?hl=en-GB).
+
+
+## How to build
+
+To build, run:
 
 ```js
 npm install
