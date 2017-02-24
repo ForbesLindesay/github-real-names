@@ -1,5 +1,7 @@
 # GitHub Real Names
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/github-real-names.svg)](https://greenkeeper.io/)
+
 Github Real Names is a Google chrome extension that adds a button to toggle showing real names instead of usernames on GitHub.
 
 Download it from the [chrome store](https://chrome.google.com/webstore/detail/github-real-names/edfnfekndkopmlejjmlplpceflfldoae?hl=en-GB).
