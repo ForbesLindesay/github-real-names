@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "plugin for Google Chrome that adds a button to toggle showing real names instead of usernames on GitHub",
   "dependencies": {
-    "he": "^0.5.0",
-    "then-request": "^1.0.0"
+    "he": "^1.1.1",
+    "then-request": "^2.2.0"
   },
   "repository": {
     "type": "git",
