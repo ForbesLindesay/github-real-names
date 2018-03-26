@@ -10,8 +10,7 @@ Download it from the [chrome store](https://chrome.google.com/webstore/detail/gi
 To build, run:
 
 ```js
-npm install
-npm install browserify -g
+yarn
 browserify index.js > contentscript.js
 ```
 

@@ -8,14 +8,23 @@ var realNames = {
 };
 
 function loadRealName(username) {
-  if (realNames[username]) return;
+  if (realNames[username ]) return;
   realNames[username] = username;
-  request('GET', url.resolve('https://api.github.com/users/', username)).getBody().done(function (res) {
-    res = JSON.parse(res)
-    if (res.name) {
-      realNames[username] = res.name
+  chrome.runtime.sendMessage({action: "get-real-name", username: username}, function(response) {
+    if (response && response.cached) {
+      realNames[username] = response.cached;
+      update();
+      return;
     }
-    update();
+    request('GET', url.resolve('https://api.github.com/users/', username)).getBody().done(function (res) {
+      res = JSON.parse(res);
+      if (res.name) {
+        realNames[username] = res.name;
+        chrome.runtime.sendMessage({action: "set-real-name", username: username, realName: res.name}, function(response) {
+        });
+      }
+      update();
+    });
   });
 }
 
