@@ -115,6 +115,14 @@ function update() {
       return username;
     }
   });
+  updateList(document.querySelectorAll('a.assignee > .css-truncate-target'), function (author) {
+    return /\/([^\/]+)$/.test(author.parentNode.getAttribute('href'));
+  }, function (author) {
+    if (!author.style.maxWidth) {
+      author.style.maxWidth = '250px';
+    }
+    return /\/([^\/]+)$/.exec(author.parentNode.getAttribute('href'))[1];
+  });
 }
 
 update();
