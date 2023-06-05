@@ -11,7 +11,7 @@ To build, run:
 
 ```js
 yarn
-browserify index.js > contentscript.js
+./node_modules/.bin/browserify index.js > contentscript.js
 ```
 
 in this repository.

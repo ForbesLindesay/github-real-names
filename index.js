@@ -93,7 +93,7 @@ function update() {
   }, function (author) {
     return /\/([^\/]+)$/.exec(author.getAttribute('href'))[1];
   });
-  updateList(document.querySelectorAll('.opened-by a.muted-link'), function (author) {
+  updateList(document.querySelectorAll('.opened-by a.Link--muted'), function (author) {
     return true;
   }, function (author) {
     if (author.hasAttribute('data-user-name')) {
